@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+       <div class="todo-app">
+        <h2>TO-DO LIST: <span>📝</span></h2>
+        <p class="sub" id="sub">
+            Add your task below: 
+        </p> 
+        
+        <div class="row">
+            <input type="text" id="inputBox" placeholder="Add a new task...">
+            <button onclick="showCategories()">Add</button>
+        </div>
+
+        <div class="category-row" id="categoryRow" style="display: none;">
+            <button onclick="selectCategory('Daily')">Daily</button>
+            <button onclick="selectCategory('Weekly')">Weekly</button>
+            <button onclick="selectCategory('Monthly')">Monthly</button>
+        </div>
+
+        <div class="priority-row" id="priorityRow" style="display: none;">
+            <select id="prioritySelect">
+                <option value="high">🔴 High Priority</option>
+                <option value="medium" selected>🟡 Medium Priority</option>
+                <option value="low">🟢 Low Priority</option>
+            </select>
+            <select id="reminderSelect">
+                <option value="">⏰ No Reminder</option>
+                <option value="15">⏰ In 15 minutes</option>
+                <option value="30">⏰ In 30 minutes</option>
+                <option value="60">⏰ In 1 hour</option>
+                <option value="180">⏰ In 3 hours</option>
+                <option value="1440">⏰ In 1 day</option>
+                <option value="10080">⏰ In 1 week</option>
+            </select>
+            <button class="sort-btn" onclick="confirmAddTask()">Confirm Add</button>
+        </div>
+        <div id="task-sections">
+        </div>
+       </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
